@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+	<constant name="struts.devMode" value="true" />
+	
+	
+	<!-- Cấu hình css -->
+     <package name="*.css" namespace="/sources/styles" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/styles/{1}.css</result>
+		</action>
+	</package>
+	<package name="*.loginAdmin_css" namespace="/sources/admin/vendor/bootstrap/css" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/admin/vendor/css/{1}.css</result>
+		</action>
+	</package>
+	<package name="*.css" namespace="/sources/admin/css" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/admin/styles/{1}.css</result>
+		</action>
+	</package>
+	
+	
+	
+	<!-- Cấu hình js javascript -->
+	<package name="*.Js" namespace="/sources/admin/js" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/admin/styles/{1}.js</result>
+		</action>
+	</package>
+	<package name="*.loginAdminJs" namespace="/sources/admin/vendor/bootstrap/js" extends="struts-default">
+		<action name="{1}">
+			<result>../sources/admin/vedor/bootstrap/js/{1}.js</result>
+		</action>
+	</package>
+	<!-- ***************************************************************************************************
+		Cấu hình trang: 	SMC
+	 	 ***************************************************************************************************-->
+	<package name="default" namespace="" extends="struts-default">
+		
+		<action name="login" class="uit.edu.vn.action.LoginAction" method = "execute" >
+            <result name ="success" >WEB-INF/pages/user/authen/login.jsp</result>
+            <result name ="error" >WEB-INF/pages/user/authen/error.jsp</result>
+        </action>
+		
+		<action name="home">
+			<result>WEB-INF/pages/user/home.jsp</result>
+		</action>
+	</package>
+	
+	<!-- ***************************************************************************************************
+		Cấu hình trang: 	CMS AMDIN
+	 	 ***************************************************************************************************-->
+	<package name="cms" namespace="/admin" extends="struts-default">
+		
+		<action name="home">
+            <result>../WEB-INF/pages/admin/index.jsp</result>
+        </action>
+        <action name="charts">
+            <result>../WEB-INF/pages/admin/charts.jsp</result>
+        </action>
+         <action name="tables">
+            <result>../WEB-INF/pages/admin/tables.jsp</result>
+        </action>
+		<action name="login">
+            <result>../WEB-INF/pages/admin/authen/login.jsp</result>
+        </action>
+        
+        <action name="login1" class="uit.edu.vn.action.AdminLoginAction" method="execute">
+			<result name="success" type="redirect">home</result> <!-- action gọi action -->
+			<result name="error" type="redirect">login</result>
+		</action>
+		
+		<action name="logout" class="uit.edu.vn.action.AdminLogoutAction" method="execute">
+			<result name="success" type="redirect">login</result>
+		</action>
+
+	</package>
+	
+</struts>
