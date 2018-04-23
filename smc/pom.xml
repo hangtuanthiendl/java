@@ -52,6 +52,7 @@
             <version>2.3.20</version>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         </dependency>       		
 		<!-- <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
@@ -69,6 +70,10 @@
 		
 
 		
+=======
+        </dependency>       
+        
+>>>>>>> parent of 5fc5366... Update 22/4
 =======
         </dependency>       
         
