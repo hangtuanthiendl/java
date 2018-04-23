@@ -21,6 +21,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/hangt/OneDrive/Desktop/sqljdbc42.jar"/>
+=======
+>>>>>>> parent of 5fc5366... Update 22/4
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
